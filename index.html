@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <title>Phone Price Performance Calculator</title>
+    </head>
+    <body>
+      <h1>Phone Price Performance Calculator</h1>
+      <form>
+        <label>Phone Name:</label>
+        <input type="text" id="name"><br><br>
+        <label>Phone Price:</label>
+        <input type="number" id="price"><br><br>
+        <label>RAM (GB):</label>
+        <input type="number" id="ram"><br><br>
+        <label>Storage (GB):</label>
+        <input type="number" id="storage"><br><br>
+        <label>Processor Type:</label>
+        <select id="processor">
+          <option value="Snapdragon 888">Snapdragon 888</option>
+          <option value="Snapdragon 865">Snapdragon 865</option>
+          <option value="Snapdragon 845">Snapdragon 845</option>
+          <option value="Kirin 9000">Kirin 9000</option>
+          <option value="Exynos 2100">Exynos 2100</option>
+        </select><br><br>
+        <button type="button" onclick="calculateScore()">Calculate Price Performance</button>
+      </form>
+      <br><br>
+      <h2>Result:</h2>
+      <p id="result"></p>
+    </body>
+    <script>
+      function calculateScore() {
+        let name = document.getElementById("name").value;
+        let price = document.getElementById("price").value;
+        let ram = document.getElementById("ram").value;
+        let storage = document.getElementById("storage").value;
+        let processor = document.getElementById("processor").value;
+        let specScore = 0;
+        switch(processor) {
+          case "Snapdragon 888":
+            specScore = 5000;
+            break;
+          case "Snapdragon 865":
+            specScore = 4000;
+            break;
+          case "Snapdragon 845":
+            specScore = 3500;
+            break;
+          case "Kirin 9000":
+            specScore = 3000;
+            break;
+          case "Exynos 2100":
+            specScore = 2500;
+            break;
+          default:
+            specScore = 0;
+        }
+        specScore += (ram + storage) * 100;
+        let score = specScore / price;
+        document.getElementById("result").innerHTML = 
+          name + " has a spec score of " + specScore + 
+          " and a price performance score of " + score.toFixed(2);
+      }
+    </script>
+  </html>
