@@ -8,20 +8,32 @@
       <form>
         <label>Phone Name:</label>
         <input type="text" id="name"><br><br>
-        <label>Phone Price:</label>
-        <input type="number" id="price"><br><br>
-        <label>RAM (GB):</label>
-        <input type="number" id="ram"><br><br>
-        <label>Storage (GB):</label>
-        <input type="number" id="storage"><br><br>
-        <label>Processor Type:</label>
-        <select id="processor">
-          <option value="Snapdragon 888">Snapdragon 888</option>
-          <option value="Snapdragon 865">Snapdragon 865</option>
-          <option value="Snapdragon 845">Snapdragon 845</option>
-          <option value="Kirin 9000">Kirin 9000</option>
-          <option value="Exynos 2100">Exynos 2100</option>
-        </select><br><br>
+        <label>Display Type:</label>
+        <select id="displaytype">
+          <option value="oled">OLED</option>
+          <option value="lcd">LCD</option>
+        </select>
+        <label>Display- width & -height</label>
+        <input type="number" id="width" placeholder="Width"><input type="number" id="width" placeholder="height"><br><br>
+        <label>Display Density</label>
+        <input type="number" id="density"><p>ppi</p><br><br>
+        <label>Storage capacity:</label>
+        <input type="number" id="storage"><p>GB</p><br><br>
+        <label>Processor speed:</label>
+        <input type="number" id="processorspeed"><p>GHz</p><br><br>
+        <label>Processor arch:</label>
+        <input type="number" id="processorarch"><p>-bit</p><br><br>
+        <label>Processor quantity:</label>
+        <input type="number" id="processorquantity"><br><br>
+        <label>Graphic memory:</label>
+        <input type="number" id="graphicmemory"><br><br>
+        <label>Graphic chip quantity:</label>
+        <input type="number" id="graphicchipquantity"><br><br>
+        <label>Rear camera:</label>
+        <input type="number" id="rearcamera"><p>MP</p><br><br>
+        <label>Connections:</label>
+        <input type="checkbox" id="bluetooth"><br><br>
+        <br><br>
         <button type="button" onclick="calculateScore()">Calculate Price Performance</button>
       </form>
       <br><br>
