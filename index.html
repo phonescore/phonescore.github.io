@@ -54,36 +54,54 @@
     </body>
     <script>
       function calculateScore() {
-        let name = document.getElementById("name").value;
-        let price = document.getElementById("price").value;
-        let ram = document.getElementById("ram").value;
-        let storage = document.getElementById("storage").value;
-        let processor = document.getElementById("processor").value;
-        let specScore = 0;
-        switch(processor) {
-          case "Snapdragon 888":
-            specScore = 5000;
-            break;
-          case "Snapdragon 865":
-            specScore = 4000;
-            break;
-          case "Snapdragon 845":
-            specScore = 3500;
-            break;
-          case "Kirin 9000":
-            specScore = 3000;
-            break;
-          case "Exynos 2100":
-            specScore = 2500;
-            break;
-          default:
-            specScore = 0;
-        }
-        specScore += (ram + storage) * 100;
-        let score = specScore / price;
-        document.getElementById("result").innerHTML = 
-          name + " has a spec score of " + specScore + 
-          " and a price performance score of " + score.toFixed(2);
-      }
+        // Assign weights to different factors
+        displaytype_weight = 0.1
+        displaysize_weight = 0.1
+        displayres_weight = 0.1
+        displaydensity_weight = 0.1
+        storage_weight = 0.1
+        processorspeed_weight = 0.1
+        processorarch_weight = 0.05
+        processorquantity_weight = 0.05
+        graphicmemory_weight = 0.05
+        graphicchipquantity_weight = 0.05
+        camera_weight = 0.1
+        batterycapacity_weight = 0.1
+        price_weight = 0.5
+
+        // Get the values from the form
+        displaytype = document.getElementById("displaytype").value
+        displaysize = (document.getElementById("width").value) * (document.getElementById("height").value)
+        displayres = displaysize * 2160 * 1440
+        displaydensity = document.getElementById("density").value
+        storage = document.getElementById("storage").value
+        processorspeed = document.getElementById("processorspeed").value
+        processorarch = document.getElementById("processorarch").value
+        processorquantity = document.getElementById("processorquantity").value
+        graphicmemory = document.getElementById("graphicmemory").value
+        graphicchipquantity = document.getElementById("graphicchipquantity").value
+        camera = document.getElementById("rearcamera").value
+        batterycapacity = document.getElementById("batterycapacity").value
+        batterylife = batterycapacity / processorspeed
+        price = document.getElementById("price").value
+
+        // Calculate normalized values for each factor
+        normalized_displaytype = displaytype / 2
+        normalized_displaysize = displaysize / 6
+        normalized_displayres = displayres / (2560 * 1440)
+        normalized_displaydensity = displaydensity / 800
+        normalized_storage = storage / 512
+        normalized_processorspeed = processorspeed / 2.5
+        normalized_processorarch = processorarch / 64
+        normalized_processorquantity = processorquantity / 8
+        normalized_graphicmemory = graphicmemory / 8
+        normalized_graphicchipquantity = graphicchipquantity / 8
+        normalized_camera = camera / 64
+        normalized_batterycapacity = batterycapacity / 6000
+        normalized_batterylife = batterylife / 40
+        normalized_price = price / 1500
+
+        // Calculate the score using the weights and normalized values
+        score = displaytype_weight * normalized_displaytype + displaysize_weight * normalized_displaysize + displayres_weight * normalized_displayres + displaydensity_weight * normalized_displaydensity + storage_weight * normalized_storage + processorspeed_weight * normalized_processorspeed + processorarch_weight * normalized_processorarch + processorquantity_weight * normalized_processorquantity + graphicmemory_weight * normalized_graphicmemory + graphicchipquantity_weight * normalized_graphicchipquantity + camera_weight * normalized_camera + batterycapacity_weight * normalized_batterycapacity + batterylife_weight * normalized_batterylife + price_weight * normalized_price
     </script>
   </html>
