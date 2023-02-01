@@ -10,8 +10,8 @@
         <input type="text" id="name"><br><br>
         <label>Display Type:</label>
         <select id="displaytype">
-          <option value="oled">OLED</option>
-          <option value="lcd">LCD</option>
+          <option value="1">OLED</option>
+          <option value="0">LCD</option>
         </select><br>
         <label>Display- width & -height</label>
         <input type="number" id="width" placeholder="Width"><input type="number" id="height" placeholder="height"><br><br>
@@ -76,7 +76,7 @@
         price = document.getElementById("price").value
 
         // Calculate normalized values for each factor
-        normalized_displaytype = displaytype / 2
+        normalized_displaytype = displaytype / 1
         normalized_displaysize = displaysize / 6
         normalized_displayres = displayres / (2560 * 1440)
         normalized_displaydensity = displaydensity / 800
