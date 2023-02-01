@@ -92,6 +92,7 @@
 
         // Calculate the score using the weights and normalized values
         score = displaytype_weight * normalized_displaytype + displaysize_weight * normalized_displaysize + displayres_weight * normalized_displayres + displaydensity_weight * normalized_displaydensity + storage_weight * normalized_storage + processorspeed_weight * normalized_processorspeed + processorarch_weight * normalized_processorarch + processorquantity_weight * normalized_processorquantity + graphicmemory_weight * normalized_graphicmemory + graphicchipquantity_weight * normalized_graphicchipquantity + camera_weight * normalized_camera + batterycapacity_weight * normalized_batterycapacity + batterylife_weight * normalized_batterylife + price_weight * normalized_price
-    </script>
+        document.getElementById("result").innerHTML = score;
+      </script>
     </body>
   </html>
