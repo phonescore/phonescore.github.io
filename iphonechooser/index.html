@@ -8,9 +8,9 @@
       <form>
         <select id="dropdownseries" onchange="showtypeDropdown()">
           <option value="">Please select</option>
-          <option value="option1">iPhone 8</option>
-          <option value="option2">iPhone 13</option>
-          <option value="option3">iPhone 14</option>
+          <option value="iphone8">iPhone 8</option>
+          <option value="iphone13">iPhone 13</option>
+          <option value="iphone14">iPhone 14</option>
         </select>
 
         <div id="dropdowntype" style="display: none;">
@@ -25,7 +25,7 @@
         function showtypeDropdown() {
           var dropdownseries = document.getElementById("dropdownseries");
           var dropdowntype = document.getElementById("dropdowntype");
-          if (dropdownseries.value === "iPhone 8") {
+          if (dropdownseries.value === "iphone8") {
             dropdowntype.style.display = "block";
           } else {
             dropdowntype.style.display = "none";
