@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <title>Phone Price Performance Calculator</title>
+    </head>
+    <body>
+      <h1>Phone Price Performance Calculator</h1>
+      <form>
+        <select id="dropdownseries" onchange="showtypeDropdown()">
+          <option value="">Please select</option>
+          <option value="option1">iPhone 8</option>
+          <option value="option2">iPhone 13</option>
+          <option value="option3">iPhone 14</option>
+        </select>
+
+        <div id="dropdowntype" style="display: none;">
+          <select>
+            <option value="">Please select</option>
+            <option value="classic">classic</option>
+            <option value="plus">plus</option>
+          </select>
+        </div>
+      </form>
+      <script>
+        function showtypeDropdown2() {
+          var dropdownseries = document.getElementById("dropdownseries");
+          var dropdowntype = document.getElementById("dropdowntype");
+          if (dropdownseries.value = "iPhone 8") {
+            dropdowntype.style.display = "block";
+          } else {
+            dropdowntype.style.display = "none";
+           }
+        }
+
+      </script>
+    </body>
+  </html>
