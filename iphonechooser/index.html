@@ -29,18 +29,32 @@
             <option value="promax">pro max</option>
           </select>
         </div>
+        <div id="dropdowntype14" style="display: none;">
+          <select>
+            <option value="">Please select</option>
+            <option value="classic">classic</option>
+            <option value="plus">plus</option>
+            <option value="pro">pro</option>
+            <option value="promax">pro max</option>
+          </select>
+        </div>
       </form>
       <script>
         function showtypeDropdown() {
           var dropdownseries = document.getElementById("dropdownseries");
           var dropdowntype8 = document.getElementById("dropdowntype8");
           var dropdowntype13 = document.getElementById("dropdowntype13");
+          var dropdowntype14 = document.getElementById("dropdowntype14");
           if (dropdownseries.value === "iphone8") {
             dropdowntype8.style.display = "block";
             dropdowntype13.style.display = "none";
           } else if (dropdownseries.value === "iphone13") {
             dropdowntype13.style.display = "block";
             dropdowntype8.style.display = "none";
+           } else if (dropdownseries.value === "iphone14") {
+           dropdowntype14.style.display = "block";
+           dropdowntype8.style.display = "none";
+           dropdowntype13.style.display = "none";
           }
         }
 
