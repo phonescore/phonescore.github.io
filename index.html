@@ -76,7 +76,7 @@
         graphicchipquantity = document.getElementById("graphicchipquantity").value
         camera = document.getElementById("rearcamera").value
         batterycapacity = document.getElementById("batterycapacity").value
-        batterylife = batterycapacity / processorspeed
+        batterylife = batterycapacity / (processorspeed * processorquantity)
         price = document.getElementById("price").value
 
         // Calculate normalized values for each factor
