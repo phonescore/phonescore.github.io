@@ -13,22 +13,35 @@
           <option value="iphone14">iPhone 14</option>
         </select>
 
-        <div id="dropdowntype" style="display: none;">
+        <div id="dropdowntype8" style="display: none;">
           <select>
             <option value="">Please select</option>
             <option value="classic">classic</option>
             <option value="plus">plus</option>
           </select>
         </div>
+        <div id="dropdowntype13" style="display: none;">
+          <select>
+            <option value="">Please select</option>
+            <option value="classic">classic</option>
+            <option value="mini">mini</option>
+            <option value="pro">pro</option>
+            <option value="promax">pro max</option>
+          </select>
+        </div>
       </form>
       <script>
         function showtypeDropdown() {
           var dropdownseries = document.getElementById("dropdownseries");
-          var dropdowntype = document.getElementById("dropdowntype");
+          var dropdowntype8 = document.getElementById("dropdowntype");
+          var dropdowntype13 = document.getElementById("dropdowntype13");
           if (dropdownseries.value === "iphone8") {
-            dropdowntype.style.display = "block";
+            dropdowntype8.style.display = "block";
+          else if (dropdownseries.value === "iphone13") {
+            dropdowntype13.style.display = "block";
           } else {
-            dropdowntype.style.display = "none";
+            dropdowntype8.style.display = "none";
+            dropdowntype13.style.display = "none";
            }
         }
 
