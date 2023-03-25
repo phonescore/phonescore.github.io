@@ -37,12 +37,11 @@
           var dropdowntype13 = document.getElementById("dropdowntype13");
           if (dropdownseries.value === "iphone8") {
             dropdowntype8.style.display = "block";
-          else if (dropdownseries.value === "iphone13") {
-            dropdowntype13.style.display = "block";
-          } else {
-            dropdowntype8.style.display = "none";
             dropdowntype13.style.display = "none";
-           }
+          } else if (dropdownseries.value === "iphone13") {
+            dropdowntype13.style.display = "block";
+            dropdowntype8.style.display = "none";
+          }
         }
 
       </script>
