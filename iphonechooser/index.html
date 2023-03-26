@@ -6,92 +6,115 @@
     <body>
       <h1>Phone Price Performance Calculator</h1>
       <form>
-        <select id="dropdownseries" onchange="showtypeDropdown()">
-          <option value="">Please select</option>
-          <option value="iphone8">iPhone 8</option>
-          <option value="iphone12">iPhone 12</option>
-          <option value="iphone13">iPhone 13</option>
-          <option value="iphonese3">iPhone SE 2022 (3rd Generation)</option>
-          <option value="iphone14">iPhone 14</option>
-        </select>
+  <select id="dropdownseries" onchange="showtypeDropdown()">
+    <option value="">Please select</option>
+    <option value="iphone8">iPhone 8</option>
+    <option value="iphone12">iPhone 12</option>
+    <option value="iphone13">iPhone 13</option>
+    <option value="iphonese3">iPhone SE 2022 (3rd Generation)</option>
+    <option value="iphone14">iPhone 14</option>
+  </select>
 
-        <div id="dropdowntype8" style="display: none;" onchange="showMemoryDropdown()">
-          <select>
-            <option value="">Please select</option>
-            <option value="classic">classic</option>
-            <option value="plus">plus</option>
-          </select>
-        </div>
-        <div id="dropdowntype12" style="display: none;" onchange="showMemoryDropdown()">
-          <select>
-            <option value="">Please select</option>
-            <option value="classic">classic</option>
-            <option value="mini">mini</option>
-            <option value="pro">pro</option>
-            <option value="promax">pro max</option>
-          </select>
-        </div>
-        <div id="dropdowntype13" style="display: none;" onchange="showMemoryDropdown()">
-          <select>
-            <option value="">Please select</option>
-            <option value="classic">classic</option>
-            <option value="mini">mini</option>
-            <option value="pro">pro</option>
-            <option value="promax">pro max</option>
-          </select>
-        </div>
-        <div id="dropdowntype14" style="display: none;" onchange="showMemoryDropdown()">
-          <select>
-            <option value="">Please select</option>
-            <option value="classic">classic</option>
-            <option value="plus">plus</option>
-            <option value="pro">pro</option>
-            <option value="promax">pro max</option>
-          </select>
-        </div>
-        <fieldset>
-          <input type="radio" id="64gb" name="Speicherplatz" value="64GB">
-          <label for="64gb"> 64 GB</label> 
-          <input type="radio" id="128gb" name="Speicherplatz" value="128GB">
-          <label for="128gb"> 128 GB</label>
-          <input type="radio" id="256gb" name="Speicherplatz" value="256GB">
-          <label for="256gb"> 256 GB</label> 
-        </fieldset>
-      </form>
+  <div id="dropdowntype8" style="display: none;">
+    <select onchange="showMemoryDropdown()">
+      <option value="">Please select</option>
+      <option value="classic">classic</option>
+      <option value="plus">plus</option>
+    </select>
+  </div>
+  <div id="dropdowntype12" style="display: none;">
+    <select onchange="showMemoryDropdown()">
+      <option value="">Please select</option>
+      <option value="classic">classic</option>
+      <option value="mini">mini</option>
+      <option value="pro">pro</option>
+      <option value="promax">pro max</option>
+    </select>
+  </div>
+  <div id="dropdowntype13" style="display: none;">
+    <select onchange="showMemoryDropdown()">
+      <option value="">Please select</option>
+      <option value="classic">classic</option>
+      <option value="mini">mini</option>
+      <option value="pro">pro</option>
+      <option value="promax">pro max</option>
+    </select>
+  </div>
+  <div id="dropdowntype14" style="display: none;">
+    <select onchange="showMemoryDropdown()">
+      <option value="">Please select</option>
+      <option value="classic">classic</option>
+      <option value="plus">plus</option>
+      <option value="pro">pro</option>
+      <option value="promax">pro max</option>
+    </select>
+  </div>
+  <fieldset id="memory-options" style="display: none;">
+    <legend>Speicherplatz</legend>
+    <input type="radio" id="64gb" name="Speicherplatz" value="64GB">
+    <label for="64gb"> 64 GB</label> 
+    <input type="radio" id="128gb" name="Speicherplatz" value="128GB">
+    <label for="128gb"> 128 GB</label>
+    <input type="radio" id="256gb" name="Speicherplatz" value="256GB">
+    <label for="256gb"> 256 GB</label> 
+  </fieldset>
+</form>
       <script>
         function showtypeDropdown() {
-          var dropdownseries = document.getElementById("dropdownseries");
-          var dropdowntype8 = document.getElementById("dropdowntype8");
-          var dropdowntype12 = document.getElementById("dropdowntype12");
-          var dropdowntype13 = document.getElementById("dropdowntype13");
-          var dropdowntype14 = document.getElementById("dropdowntype14");
-          if (dropdownseries.value === "iphone8") {
-            dropdowntype8.style.display = "block";
-            dropdowntype12.style.display = "none";
-            dropdowntype13.style.display = "none";
-            dropdowntype14.style.display = "none";
-          } else if (dropdownseries.value === "iphone12") {
-            dropdowntype12.style.display = "block";
-            dropdowntype8.style.display = "none";
-            dropdowntype13.style.display = "none";
-            dropdowntype14.style.display = "none";
-          } else if (dropdownseries.value === "iphone13") {
-            dropdowntype13.style.display = "block";
-            dropdowntype8.style.display = "none";
-            dropdowntype12.style.display = "none";
-            dropdowntype14.style.display = "none";
-          } else if (dropdownseries.value === "iphonese3") {
-            dropdowntype14.style.display = "none";
-            dropdowntype8.style.display = "none";
-            dropdowntype12.style.display = "none";
-            dropdowntype13.style.display = "none";
-          } else if (dropdownseries.value === "iphone14") {
-            dropdowntype14.style.display = "block";
-            dropdowntype8.style.display = "none";
-            dropdowntype12.style.display = "none";
-            dropdowntype13.style.display = "none";
-          }
-        }
+  var dropdownseries = document.getElementById("dropdownseries");
+  var dropdowntype8 = document.getElementById("dropdowntype8");
+  var dropdowntype12 = document.getElementById("dropdowntype12");
+  var dropdowntype13 = document.getElementById("dropdowntype13");
+  var dropdowntype14 = document.getElementById("dropdowntype14");
+
+  if (dropdownseries.value === "iphone8") {
+    dropdowntype8.style.display = "block";
+    dropdowntype12.style.display = "none";
+    dropdowntype13.style.display = "none";
+    dropdowntype14.style.display = "none";
+    document.getElementById("memoryFieldset8").style.display = "block";
+    document.getElementById("memoryFieldset12").style.display = "none";
+    document.getElementById("memoryFieldset13").style.display = "none";
+    document.getElementById("memoryFieldset14").style.display = "none";
+  } else if (dropdownseries.value === "iphone12") {
+    dropdowntype8.style.display = "none";
+    dropdowntype12.style.display = "block";
+    dropdowntype13.style.display = "none";
+    dropdowntype14.style.display = "none";
+    document.getElementById("memoryFieldset8").style.display = "none";
+    document.getElementById("memoryFieldset12").style.display = "block";
+    document.getElementById("memoryFieldset13").style.display = "none";
+    document.getElementById("memoryFieldset14").style.display = "none";
+  } else if (dropdownseries.value === "iphone13") {
+    dropdowntype8.style.display = "none";
+    dropdowntype12.style.display = "none";
+    dropdowntype13.style.display = "block";
+    dropdowntype14.style.display = "none";
+    document.getElementById("memoryFieldset8").style.display = "none";
+    document.getElementById("memoryFieldset12").style.display = "none";
+    document.getElementById("memoryFieldset13").style.display = "block";
+    document.getElementById("memoryFieldset14").style.display = "none";
+  } else if (dropdownseries.value === "iphone14") {
+    dropdowntype8.style.display = "none";
+    dropdowntype12.style.display = "none";
+    dropdowntype13.style.display = "none";
+    dropdowntype14.style.display = "block";
+    document.getElementById("memoryFieldset8").style.display = "none";
+    document.getElementById("memoryFieldset12").style.display = "none";
+    document.getElementById("memoryFieldset13").style.display = "none";
+    document.getElementById("memoryFieldset14").style.display = "block";
+  } else {
+    dropdowntype8.style.display = "none";
+    dropdowntype12.style.display = "none";
+    dropdowntype13.style.display = "none";
+    dropdowntype14.style.display = "none";
+    document.getElementById("memoryFieldset8").style.display = "none";
+    document.getElementById("memoryFieldset12").style.display = "none";
+    document.getElementById("memoryFieldset13").style.display = "none";
+    document.getElementById("memoryFieldset14").style.display = "none";
+  }
+}
+
       </script>
     </body>
   </html>
