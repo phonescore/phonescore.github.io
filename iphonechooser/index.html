@@ -15,14 +15,14 @@
           <option value="iphone14">iPhone 14</option>
         </select>
 
-        <div id="dropdowntype8" style="display: none;">
+        <div id="dropdowntype8" style="display: none;" onchange="showMemoryDropdown()">
           <select>
             <option value="">Please select</option>
             <option value="classic">classic</option>
             <option value="plus">plus</option>
           </select>
         </div>
-        <div id="dropdowntype12" style="display: none;">
+        <div id="dropdowntype12" style="display: none;" onchange="showMemoryDropdown()">
           <select>
             <option value="">Please select</option>
             <option value="classic">classic</option>
@@ -31,7 +31,7 @@
             <option value="promax">pro max</option>
           </select>
         </div>
-        <div id="dropdowntype13" style="display: none;">
+        <div id="dropdowntype13" style="display: none;" onchange="showMemoryDropdown()">
           <select>
             <option value="">Please select</option>
             <option value="classic">classic</option>
@@ -40,7 +40,7 @@
             <option value="promax">pro max</option>
           </select>
         </div>
-        <div id="dropdowntype14" style="display: none;">
+        <div id="dropdowntype14" style="display: none;" onchange="showMemoryDropdown()">
           <select>
             <option value="">Please select</option>
             <option value="classic">classic</option>
@@ -49,6 +49,14 @@
             <option value="promax">pro max</option>
           </select>
         </div>
+        <fieldset>
+          <input type="radio" id="64gb" name="Speicherplatz" value="64GB">
+          <label for="64gb"> 64 GB</label> 
+          <input type="radio" id="128gb" name="Speicherplatz" value="128GB">
+          <label for="128gb"> 128 GB</label>
+          <input type="radio" id="256gb" name="Speicherplatz" value="256GB">
+          <label for="256gb"> 256 GB</label> 
+        </fieldset>
       </form>
       <script>
         function showtypeDropdown() {
@@ -84,7 +92,6 @@
             dropdowntype13.style.display = "none";
           }
         }
-
       </script>
     </body>
   </html>
